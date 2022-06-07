@@ -32,6 +32,7 @@ class _ScanScreenState extends State<ScanScreen> {
   final _flashOnController = TextEditingController(text: 'Flash on');
   final _flashOffController = TextEditingController(text: 'Flash off');
   final _cancelController = TextEditingController(text: 'Cancel');
+  var productNameController= TextEditingController();
   var productQuantityController= TextEditingController();
   var outproduct='';
   var _aspectTolerance = 0.00;
@@ -139,6 +140,14 @@ class _ScanScreenState extends State<ScanScreen> {
         const SizedBox(height: 40, width: 100,),
           Text(outproduct, style: const TextStyle(
             fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),),
+            const SizedBox(height: 30.0,),
+            TextField(
+              controller:productNameController,
+              readOnly: true,
+              keyboardType: TextInputType.number,
+              decoration: ThemeHelper().textInputDecoration(
+                  'الكمية', 'أدخل الكمية'),
+            ),
 
         // DropdownButton(
         //   focusColor: Colors.white38,
@@ -317,9 +326,8 @@ class _ScanScreenState extends State<ScanScreen> {
                widget.sale_invoice_model.products.length; i++){
              if(widget.sale_invoice_model.products[i].product_id ==
                  _product.getproductid){
-               productQuantityController.text =
-                   widget.sale_invoice_model.products[i].quantity.text
-                       .toString(),
+               productQuantityController.text = widget.sale_invoice_model.products[i].quantity.text.toString(),
+               productNameController.text=_product.getProductName.toString(),
                widget.sale_invoice_model.products.remove(
                    widget.sale_invoice_model.products[i]),
              }

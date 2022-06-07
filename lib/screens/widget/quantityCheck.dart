@@ -131,7 +131,8 @@ class _checkQuantityState extends State<checkQuantity> {
                             Expanded(
 
                                 child: ListView.builder(
-
+                                  scrollDirection: Axis.vertical,
+                                  shrinkWrap: true,
                                   itemCount: products.length,
                                   itemBuilder: (context, index) {
                                     Widget column = Expanded(
