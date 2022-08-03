@@ -143,7 +143,7 @@ class _ChooseCustomerState extends State<ChooseCustomer> {
                     child:Text(text='زبون جملة'.toUpperCase(),style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black),),
                   ),
                   onPressed:() {
-                    //Navigator.push(context, MaterialPageRoute(builder: (context)=>SaleInvoice()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ScanScreen(sale_invoice_model: sale_invoice_model,)));
                   }
 
               ),

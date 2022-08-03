@@ -5,6 +5,7 @@ import 'package:barcode_scanner/screens/widget/header_widget.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../theme_helper/themes.dart';
+import 'home.dart';
 import 'main_menu.dart';
 
 class LoginPage extends StatefulWidget{
@@ -75,11 +76,11 @@ class _LoginPageState extends State<LoginPage> {
                               child:Text('تسجيل دخول'.toUpperCase(),style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black),),
                           ),
                               onPressed:() {
-                                login();
+                              login();
                                 setState(() {
                                   _isloading=true;
                                 });
-                                Navigator.push(context,  MaterialPageRoute(builder: (context)=>menuPage()));
+                                Navigator.push(context,  MaterialPageRoute(builder: (context)=>home()));
 
                               },
                             )
@@ -101,8 +102,8 @@ class _LoginPageState extends State<LoginPage> {
     var Role='';
     if(passwordController.text.isNotEmpty && emailController.text.isNotEmpty){
       var response= await http.post(Uri.parse("http://192.168.43.110:8888/api/login"),body:{
-        'email': "Admin@gmail.com",
-       'password' : "123456789"});
+        'email': "A@g.com",
+       'password' : "12345678"});
 
      if(response.statusCode==200){
        print('\n\n\ntoken adam');

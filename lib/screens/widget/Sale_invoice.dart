@@ -32,12 +32,13 @@ class SaleInvoice extends StatelessWidget{
   @override
   void initState() {
 
+
   }
 
 
   @override
   Widget build(BuildContext context) {
-
+    print(total_price);
     return Scaffold(
 
         backgroundColor: Colors.white,
@@ -52,7 +53,7 @@ class SaleInvoice extends StatelessWidget{
                 Text(' : فاتورة بيع لـ\n${sale_invoice_model.customer.getname}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),textAlign: TextAlign.center,),
 
               Container(// table of products
-                height: 50,
+                height: 300,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[

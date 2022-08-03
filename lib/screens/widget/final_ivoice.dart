@@ -168,7 +168,7 @@ class finalInvoice extends StatelessWidget {
     var response= await http.post(Uri.parse("http://192.168.43.110:8888/api/SaleInvoice"),
         headers: {'Authorization' :token},
          body:
-        // json.encode(sale_invoice_model.tojson())
+         //json.encode(sale_invoice_model.tojson())
          {
            "user_id": sale_invoice_model.user_id.toString(),
            "customer_id": sale_invoice_model.customer.customer_id.toString(),
@@ -180,7 +180,7 @@ class finalInvoice extends StatelessWidget {
           }
          );
       if(response.statusCode==201){
-        print(sale_invoice_model.tojson());
+      //  print(sale_invoice_model.tojson());
         print(response.body);
         print("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
        // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Black field not allowed"),));

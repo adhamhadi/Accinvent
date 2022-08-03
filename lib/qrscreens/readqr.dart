@@ -143,10 +143,9 @@ class _ScanScreenState extends State<ScanScreen> {
             const SizedBox(height: 30.0,),
             TextField(
               controller:productNameController,
-              readOnly: true,
-              keyboardType: TextInputType.number,
+              //readOnly: true,
               decoration: ThemeHelper().textInputDecoration(
-                  'الكمية', 'أدخل الكمية'),
+                  'الاسم', 'اسم المنتج'),
             ),
 
         // DropdownButton(
@@ -321,13 +320,14 @@ class _ScanScreenState extends State<ScanScreen> {
          fetchProducts().then((value) =>
          {
            print('jjjjjjjjjjjjjjjjjjj'),
+           productNameController.text=_product.getProductName.toString(),
           if(widget.sale_invoice_model.products.length>0){
            for(int i = 0; i <
                widget.sale_invoice_model.products.length; i++){
              if(widget.sale_invoice_model.products[i].product_id ==
                  _product.getproductid){
                productQuantityController.text = widget.sale_invoice_model.products[i].quantity.text.toString(),
-               productNameController.text=_product.getProductName.toString(),
+
                widget.sale_invoice_model.products.remove(
                    widget.sale_invoice_model.products[i]),
              }
